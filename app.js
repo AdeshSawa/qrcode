@@ -3,14 +3,14 @@ const { createApp } = Vue
 createApp({
     data() {
            const options = {
-                width: 100,
-                height: 100,
+                width: 300,
+                height: 300,
                 type: "svg",
                 data: "https://www.facebook.com/",
                 image: "",
                 dotsOptions: {
-                    color: "#4267b2",
-                    type: "rounded"
+                    color: "#29292e",
+                    type: "square"
                 },
                 backgroundOptions: {
                     color: "#e9ebee",
@@ -28,11 +28,22 @@ createApp({
         }
     },
     watch: {
-        ['options.data']: function() {
-            this.qrCode.update(this.options);
+        options: {
+            handler(newValue, oldValue) {
+                //console.log('User object changed:', newValue);
+                this.qrCode.update(this.options);
+            },
+            deep: true
         }
+        // ['options.data']: function() {
+        //     this.qrCode.update(this.options);
+        // }
     },
     methods: {
+        onFileChange(e){
+            const file = e.target.files[0];
+            this.options.image = URL.createObjectURL(file);
+        },
         download() {
             this.qrCode.download({ extension: this.extension })
         }
