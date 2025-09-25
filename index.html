@@ -14,53 +14,51 @@
 </head>
 <body>
     <div id="app">
-        <div>
-            <h1>QR code Generator</h1>
-            <div id="qr-code" ref="qrCode"></div>
+        <h1>QR code Generator</h1>
+        <div id="qr-code" ref="qrCode"></div>
 
-            <select v-model="extension">
-                <option value="svg">SVG</option>
-                <option value="png">PNG</option>
-                <option value="jpeg">JPEG</option>
-                <option value="webp">WEBP</option>
-                <option value="gif">GIF</option>
-            </select>
-            <button v-on:click="download">Download</button>
-            
-            
-            <div style="margin-top: 30px;">
-                <div class="field">
-                    <input v-model="options.data" placeholder="url or text">
-                </div>
+        <select v-model="extension">
+            <option value="svg">SVG</option>
+            <option value="png">PNG</option>
+            <option value="jpeg">JPEG</option>
+            <option value="webp">WEBP</option>
+            <option value="gif">GIF</option>
+        </select>
+        <button v-on:click="download">Download</button>
+        
+        
+        <div style="margin-top: 30px;">
+            <div class="field">
+                <input v-model="options.data" placeholder="url or text">
+            </div>
 
-                <div class="field">
-                    <label for="background">Background color:</label>
-                    <input type="color" id="background" name="background" v-model="options.backgroundOptions.color"/>
-                </div>
+            <div class="field">
+                <label for="background">Background color:</label>
+                <input type="color" id="background" name="background" v-model="options.backgroundOptions.color"/>
+            </div>
 
-                <div class="field">
-                    <label for="dots">Dots color:</label>
-                    <input type="color" id="dots" name="dots" v-model="options.dotsOptions.color"/>
-                </div>
+            <div class="field">
+                <label for="dots">Dots color:</label>
+                <input type="color" id="dots" name="dots" v-model="options.dotsOptions.color"/>
+            </div>
 
-                <div class="field">
-                    <select v-model="options.dotsOptions.type">
-                        <option value="square">Square</option>
-                        <option value="rounded">Rounded</option>
-                        <option value="dots">Dots</option>
-                    </select>
-                </div>
+            <div class="field">
+                <select v-model="options.dotsOptions.type">
+                    <option value="square">Square</option>
+                    <option value="rounded">Rounded</option>
+                    <option value="dots">Dots</option>
+                </select>
+            </div>
 
-                <input type="file" name="image" id="image" @change="onFileChange" />
+            <input type="file" name="image" id="image" @change="onFileChange" />
 
 <!-- 
-                <label for="width">Width (between 100 and 1024): {{options.width}}</label>
-                <input type="range" id="points" name="width" min="100" max="1024" v-model="options.width"> -->
-
-            </div>
+            <label for="width">Width (between 100 and 1024): {{options.width}}</label>
+            <input type="range" id="points" name="width" min="100" max="1024" v-model="options.width"> -->
 
         </div>
     </div>
+    <footer>util 2025</footer>
     <script src="app.js"></script>
 </body>
 </html>
