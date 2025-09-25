@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <div id="qr-code" ref="qrCode"></div>
+            <label>
+                <input v-model="options.data" placeholder="Add data">
+
+                <select v-model="extension">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG</option>
+                    <option value="jpeg">JPEG</option>
+                    <option value="webp">WEBP</option>
+                </select>
+
+                <button v-on:click="download">Download</button>
+            </label>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
