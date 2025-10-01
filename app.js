@@ -23,6 +23,7 @@ createApp({
             };
         return {
             options,
+            file: null,
             extension: 'svg',
             qrCode: new QRCodeStyling(options)
         }
@@ -43,6 +44,9 @@ createApp({
         onFileChange(e){
             const file = e.target.files[0];
             this.options.image = URL.createObjectURL(file);
+        },
+        clearFile() {
+          this.file = null;
         },
         download() {
             this.qrCode.download({ extension: this.extension })
@@ -106,4 +110,5 @@ createApp({
 //         //   colorStops: [{ offset: 0, color: '#00266e' }, { offset: 1, color: '#4060b3' }]
 //         // },
 //     }
+
 // };
