@@ -47,7 +47,8 @@ createApp({
             this.options.image = URL.createObjectURL(file);
         },
         clearFile() {
-          this.file = null;
+            this.file = null;
+            this.options.image ="";
         },
         download() {
             this.qrCode.download({ extension: this.extension })
@@ -113,4 +114,5 @@ createApp({
 //     }
 
 // };
+
 
