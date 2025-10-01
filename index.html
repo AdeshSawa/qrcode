@@ -51,6 +51,12 @@
             </div>
 
             <input type="file" name="image" id="image" @change="onFileChange" />
+            <span v-if="file">
+                <br/>
+                <hr/>
+                  File Selected {{ file.name }}
+                <button @click="clearFile">remove</button>
+            </span>
 
 <!-- 
             <label for="width">Width (between 100 and 1024): {{options.width}}</label>
@@ -63,3 +69,4 @@
 </body>
 
 </html>
+
