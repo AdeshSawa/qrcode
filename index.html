@@ -50,7 +50,7 @@
                 </select>
             </div>
 
-            <input type="file" name="image" id="image" @change="onFileChange" />
+            <input type="file" name="image" id="image" @change="onFileChange" ref="inputFile" />
             <span v-if="file">
                 <br/>
                 <hr/>
@@ -69,4 +69,5 @@
 </body>
 
 </html>
+
 
