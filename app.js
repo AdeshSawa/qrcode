@@ -48,7 +48,8 @@ createApp({
         },
         clearFile() {
             this.file = null;
-            this.options.image ="";
+            this.$refs.inputFile.value = null;
+            this.options.image = "";
         },
         download() {
             this.qrCode.download({ extension: this.extension })
@@ -114,5 +115,6 @@ createApp({
 //     }
 
 // };
+
 
 
