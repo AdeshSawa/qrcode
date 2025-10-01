@@ -43,6 +43,7 @@ createApp({
     methods: {
         onFileChange(e){
             const file = e.target.files[0];
+            this.file = e.target.files[0];
             this.options.image = URL.createObjectURL(file);
         },
         clearFile() {
@@ -112,3 +113,4 @@ createApp({
 //     }
 
 // };
+
